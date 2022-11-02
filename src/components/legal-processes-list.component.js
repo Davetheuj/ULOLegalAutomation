@@ -37,7 +37,7 @@ export default class LegalProcessView extends Component {
                         <input type = "text"
                             name = "userName"
                             autoComplete="false"
-                            required = "false"
+                            required
                             className = "form-control"
                             value = {this.state.response}
                             onChange={this.onChangeResponse}

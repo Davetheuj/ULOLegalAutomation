@@ -8,7 +8,7 @@ export default class Navbar extends Component {
             <nav className = "navbar navbar-dark bg-dark navbar-expand-lg header">
 
 
-<a class="navbar-brand" href="/">
+<a className="navbar-brand" href="/">
 <img src={logo}  alt="logo" height="50px" />
 </a>
 

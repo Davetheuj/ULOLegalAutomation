@@ -14,7 +14,7 @@ export default class CreateUser extends Component {
         this.onChangePasswordConfirm = this.onChangePasswordConfirm.bind(this);
         this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangeUsername = this.onChangeUsername.bind(this);
-        this.onChangeRole = this.onChangeRole.bind(this);
+       
         this.onSubmit = this.onSubmit.bind(this);
 
         this.userInput = React.createRef();
@@ -75,16 +75,9 @@ export default class CreateUser extends Component {
         
     }
 
-    onChangeRole(e){
-        this.setState({
-            role: e.target.value
-        });
-        
-    }
-
     onChangeUsername(e){
         this.setState({
-            role: e.target.value
+            username: e.target.value
         });
         
     }
@@ -119,8 +112,8 @@ export default class CreateUser extends Component {
                 <div className = "form-group" >
                     <label> Username: </label>
                     <input type = "text"
-                        name = "userName"
-                        autoComplete='false'
+                        name = "username"
+                        autoComplete="false"
                         required
                         className = "form-control"
                         value = {this.state.username}
