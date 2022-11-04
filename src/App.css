@@ -8,12 +8,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -34,7 +28,7 @@
   color: white;
   font-family: Sans-Serif;
   text-align: center;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
 }
 
 .form-group {
@@ -59,23 +53,30 @@
   height: 100%;
 }
 
+.list-group{
+  background-color: #42454b;
+  align-content: center;
+  align-items: center;
+}
+
 .navbar {
   padding-left: 1%;
 }
 
-.header {
+.header{
   height: 60px
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.centered-header{
+  align-content: center;
+  height: 60px;
 }
+
+.hpad{
+margin: 10px;
+}
+
+
 
 
 

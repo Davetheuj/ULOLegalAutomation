@@ -3,7 +3,7 @@ export default class SmallClaimProcess {
     
     constructor(){
     this.subprocessIterator = 0;
-    this.subprocessCounter = 0;
+    this.questionIterator = 0;
     this.processName = "Small Claim Plaintiff";
     this.plaintiffFirstName = {value: "", required: true};
     this.plaintiffLastName = {value: "", required: true};
@@ -39,6 +39,8 @@ export default class SmallClaimProcess {
     }
 
 }
+
+
 
 
 

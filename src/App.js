@@ -9,7 +9,7 @@ import EditLegalProcess from "./components/edit-legal-process.component.js";
 import UserView from "./components/user-view.component";
 import CreateUser from "./components/create-user.component.js"
 import Home from "./components/home.component";
-
+import SmallClaims from "./components/small-claims.component"
 
 export default class App extends Component {
 
@@ -31,6 +31,7 @@ export default class App extends Component {
     <Route path = "/Users/:username"  element={<UserView/>} />
     <Route path = "/edit/:id"  element={<EditLegalProcess/>} />
     <Route path = "/processes" exact element={<LegalProcessView/>} />
+    <Route path = "/smallclaims" exact element={<SmallClaims/>} />
     </Routes>
     </Router>
     )
