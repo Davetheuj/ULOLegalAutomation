@@ -15,6 +15,7 @@ export default class SmallClaims extends Component {
         
         this.legalProcess = new SmallClaimProcess();
 
+
         console.log("creating" + this.legalProcess.processName + "process");
         
         this.state = {
@@ -22,6 +23,7 @@ export default class SmallClaims extends Component {
             question: this.legalProcess.subprocesses[this.legalProcess.subprocessIterator].questions[this.legalProcess.questionIterator].question,
             response: "",
             info: "",
+            percentComplete: 0,
         }
   
     }
@@ -80,7 +82,9 @@ export default class SmallClaims extends Component {
                         </div>
                         <br/>
                         <br/>
-                        <ProgressBar striped animated variant="success" now={90} label="-Percent Complete-" />
+
+                        <ProgressBar striped animated  variant="success" now={this.state.percentComplete} label={this.state.percentComplete + "%"} />
+
                     </div>
                 </form>
                 <br/>
@@ -95,6 +99,7 @@ export default class SmallClaims extends Component {
         
         //set the field's value to the user's response (input)
         this.legalProcess.subprocesses[this.legalProcess.subprocessIterator].questions[this.legalProcess.questionIterator].field.value = this.state.response;
+
         //increment the question iterator
         this.legalProcess.questionIterator += 1;
 
@@ -104,20 +109,23 @@ export default class SmallClaims extends Component {
 
             if(this.legalProcess.subprocessIterator > this.legalProcess.subprocesses.length - 1){
                 this.setState({
-                    processComplete : true
+                    processComplete : true,
+                    percentComplete : (this.state.percentComplete + 10)
                 })
             }
             else{
                 this.legalProcess.questionIterator = 0;
                 this.setState({
                     question: this.legalProcess.subprocesses[this.legalProcess.subprocessIterator].questions[this.legalProcess.questionIterator].question,
-                    response: ""
+                    response: "",
+                    percentComplete : (this.state.percentComplete + 10)
                 })
             }
   
         }
 
         try{this.setState({
+            percentComplete : (this.state.percentComplete + 10),
             question: this.legalProcess.subprocesses[this.legalProcess.subprocessIterator].questions[this.legalProcess.questionIterator].question,
             response: ""
         })}catch{

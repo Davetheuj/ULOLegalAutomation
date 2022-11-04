@@ -31,6 +31,26 @@ export default class SmallClaimProcess {
 
         },
 
+        {
+            document: "SC-500", 
+            dependencies: "", 
+            questions: [
+                {
+                 question: "Moved on to the second subprocess?", field: this.plaintiffFirstName, dependants: ""
+                },
+                {
+                 question: "What is your last name?", field: this.plaintiffLastName, dependants: ""
+                },
+                {
+                question: "What is the defendant's first name?", field: this.defendantFirstName, dependants: ""
+                },
+                {
+                question: "What is the defendant's last name?", field: this.defendantLastName, dependants: ""
+                },
+        ]
+
+        },
+
    
     ]
     
