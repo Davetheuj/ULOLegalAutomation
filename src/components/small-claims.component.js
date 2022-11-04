@@ -13,6 +13,7 @@ export default class SmallClaims extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.onBackClicked = this.onBackClicked.bind(this);
         
+        
         this.legalProcess = new SmallClaimProcess();
 
 
@@ -38,6 +39,10 @@ export default class SmallClaims extends Component {
                     <br/>
                     <label> Process Completed! Please review the information below to make sure it is correct. </label>
                     <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        {this.renderField()}
                         <br/>
                         <br/>
                         <br/>
@@ -161,6 +166,15 @@ export default class SmallClaims extends Component {
 
     renderField(){
 
+        let buffer = [];
+
+        buffer.push(<div>Plaintiff's First Name: {this.legalProcess.plaintiffFirstName.value}</div>);
+        buffer.push(<div>Plaintiff's Last Name: {this.legalProcess.plaintiffLastName.value}</div>);
+        buffer.push(<div>Defendant's First Name: {this.legalProcess.defendantFirstName.value}</div>);
+        buffer.push(<div>Defendant's Last Name: {this.legalProcess.defendantLastName.value}</div>);
+        return(<div> 
+            {buffer}
+        </div>)
     }
   
 }
